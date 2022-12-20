@@ -18,7 +18,7 @@ body {
     padding: 5px;
     width: 80vw;
     height: 10vh;
-    background-color: #9be3ea;
+    background-color: #13eaa3;
     font-size: x-large;
     text-align: center;
 
@@ -26,7 +26,7 @@ body {
 
 .result {
     margin: 10px;
-    padding: 5px;
+    padding: 0px;
     width: 100vw;
     height: 10vh;
     text-align: center;
@@ -41,17 +41,17 @@ body {
     padding: 5px;
     width: 80vw;
     height: 20vh;
-    background-color: #9eb1b3;
+    background-color: #13eaa3;
 
 }
 
 .option {
     padding: 10px;
     width: 60vw;
-    height: 10vh;
+    height: 20vh;
     font-size: larger;
-    background-color: lightskyblue;
-    border-radius: 25%;
+    background-color: rgb(248, 195, 22);
+    border-radius: 5%;
 }
 
 .option:hover {
@@ -65,7 +65,7 @@ body {
     padding: 5px;
     display: flex;
     justify-content: space-around;
-    background-color: #c7dddf;
+    background-color: #13eaa3;
 }
 
 .evaluate,
@@ -76,12 +76,8 @@ body {
     font-size: larger;
 }
 
-.evaluate {
 
-    background-color: #50DBB4;
-}
-
-.next {
+.start {
     color: white;
     background-color: #BF3325;
 }
