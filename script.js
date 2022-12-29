@@ -1,6 +1,16 @@
 var questionBox = document.querySelector("#question")
 
+var nextQuestion = 0
 
+var answers = document.querySelectorAll(".option")
+function checkAnswer() {
+    console.log("check answer worked.")
+    nextQuestion = nextQuestion + 1
+    callNextQuestion()
+}
+for (var i = 0; i < answers.length; i++) {
+    answers[i].addEventListener("click", checkAnswer)
+}
 
 var questions = [
     {
@@ -44,8 +54,8 @@ var questions = [
         correctAnswer: "scope"
     },
 ]
-console.log(questions[1].question)
-// questionBox.innerHTML = questions[1].question
+console.log(questions[0].question)
+
 
 
 
@@ -53,5 +63,28 @@ console.log(questions[1].question)
 // Then we need to add an event listener to this button. 
 // Write a function that this add event listener calls.
 
-var startButton = "start";
-function keydownAction()
+var startButton = document.querySelector("#start")
+var opt1 = document.querySelector("#op1")
+var opt2 = document.querySelector("#op2")
+var opt3 = document.querySelector("#op3")
+var opt4 = document.querySelector("#op4")
+
+startButton.addEventListener("click", callNextQuestion
+);
+function callNextQuestion() {
+    console.log("button clicked!");
+    if (nextQuestion < 8) {
+
+        questionBox.innerHTML = questions[nextQuestion].question
+        for (let i = 0; i < questions[nextQuestion].answers.length; i++) {
+            var options = [opt1, opt2, opt3, opt4]
+            options[i].innerHTML = questions[nextQuestion].answers[i]
+        }
+    } else {
+        finishGame()
+    }
+    // nextQuestion = nextQuestion + 1
+}
+function finishGame() {
+    console.log("game finished");
+}

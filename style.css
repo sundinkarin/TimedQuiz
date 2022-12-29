@@ -42,14 +42,14 @@ body {
     padding: 5px;
     width: 80vw;
     height: 20vh;
-    background-color: #44bdf1;
+    background-color: #ffffff;
 
 }
 
 .option {
     padding: 10px;
-    width: 60vw;
-    height: 20vh;
+    width: 70vw;
+    height: 5vh;
     font-size: larger;
     background-color: rgb(244, 248, 22);
     border-radius: 5%;
@@ -80,7 +80,7 @@ body {
 
 
 .start {
-    width: 20vw;
+    width: 15vw;
     color: white;
     background-color: #1bbf08;
     font-size: larger;
