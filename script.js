@@ -1,16 +1,16 @@
 var questionBox = document.querySelector("#question")
 
-var nextQuestion = 0
+var currentQuestion = 0
 
-var answers = document.querySelectorAll(".option")
+var answers = document.querySelector(".option")
 function checkAnswer() {
     console.log("check answer worked.")
-    nextQuestion = nextQuestion + 1
+
     callNextQuestion()
 }
-for (var i = 0; i < answers.length; i++) {
-    answers[i].addEventListener("click", checkAnswer)
-}
+// for (var i = 0; i < answers.length; i++) {
+answers.addEventListener("click", checkAnswer)
+// }
 
 var questions = [
     {
@@ -73,18 +73,26 @@ startButton.addEventListener("click", callNextQuestion
 );
 function callNextQuestion() {
     console.log("button clicked!");
-    if (nextQuestion < 8) {
 
-        questionBox.innerHTML = questions[nextQuestion].question
-        for (let i = 0; i < questions[nextQuestion].answers.length; i++) {
-            var options = [opt1, opt2, opt3, opt4]
-            options[i].innerHTML = questions[nextQuestion].answers[i]
-        }
-    } else {
-        finishGame()
-    }
-    // nextQuestion = nextQuestion + 1
+
+
+
+    // for (let i = 0; i < questions.length; i++) {
+    questionBox.innerHTML = questions[currentQuestion].question
+    opt1.innerHTML = questions[currentQuestion].answers[0]
+    opt2.innerHTML = questions[currentQuestion].answers[1]
+    opt3.innerHTML = questions[currentQuestion].answers[2]
+    opt4.innerHTML = questions[currentQuestion].answers[3]
+
+    currentQuestion++
+
+    console.log(currentQuestion)
+    // }
+
+    finishGame()
+    // currentQuestion = currentQuestion + 1
 }
+// setInterval(function () { element.innerHTML += "Hello" }, 1000);
 function finishGame() {
     console.log("game finished");
 }
