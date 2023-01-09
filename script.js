@@ -2,15 +2,25 @@ var questionBox = document.querySelector("#question")
 
 var currentQuestion = 0
 
-var answers = document.querySelector(".option")
-function checkAnswer() {
-    console.log("check answer worked.")
-
-    callNextQuestion()
-}
+var answers = document.querySelectorAll(".option")
 // for (var i = 0; i < answers.length; i++) {
-answers.addEventListener("click", checkAnswer)
+//     answers[i].addEventListener("click", checkAnswer)
 // }
+function checkAnswer() {
+
+    console.log("check answer worked.")
+    console.log(this.innerText)
+    console.log(questions[currentQuestion - 1].correctAnswer)
+    var userChoice = this.innerText
+    var correctChoice = questions[currentQuestion - 1].correctAnswer
+    if (userChoice == correctChoice) {
+        console.log("You picked the right answer!")
+    } else {
+        console.log("You picked the wrong answer!")
+    }
+    // callNextQuestion()
+}
+
 
 var questions = [
     {
@@ -54,25 +64,19 @@ var questions = [
         correctAnswer: "scope"
     },
 ]
-console.log(questions[0].question)
 
 
-
-
-// make a variable for the start button. 
-// Then we need to add an event listener to this button. 
-// Write a function that this add event listener calls.
 
 var startButton = document.querySelector("#start")
 var opt1 = document.querySelector("#op1")
 var opt2 = document.querySelector("#op2")
 var opt3 = document.querySelector("#op3")
 var opt4 = document.querySelector("#op4")
+opt1.addEventListener("click", checkAnswer)
 
 startButton.addEventListener("click", callNextQuestion
 );
 function callNextQuestion() {
-    console.log("button clicked!");
 
 
 
@@ -86,10 +90,10 @@ function callNextQuestion() {
 
     currentQuestion++
 
-    console.log(currentQuestion)
+
     // }
 
-    finishGame()
+    // finishGame()
     // currentQuestion = currentQuestion + 1
 }
 // setInterval(function () { element.innerHTML += "Hello" }, 1000);
