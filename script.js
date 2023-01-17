@@ -1,11 +1,28 @@
 var questionBox = document.querySelector("#question")
-
+var formEl = document.querySelector("#highScoreForm")
 var currentQuestion = 0
 
+var timeLeft = 120
+
+var timerEl = document.querySelector("#timer")
+function checkTime() {
+
+    var timerInterval = setInterval(function () {
+        timeLeft = timeLeft - 1
+        timerEl.innerHTML = timeLeft
+        if (timeLeft == 0) {
+            clearInterval(timerInterval)
+        }
+    }, 1000)
+
+
+}
+
+
 var answers = document.querySelectorAll(".option")
-// for (var i = 0; i < answers.length; i++) {
-//     answers[i].addEventListener("click", checkAnswer)
-// }
+for (var i = 0; i < answers.length; i++) {
+    answers[i].addEventListener("click", checkAnswer)
+}
 function checkAnswer() {
 
     console.log("check answer worked.")
@@ -17,8 +34,9 @@ function checkAnswer() {
         console.log("You picked the right answer!")
     } else {
         console.log("You picked the wrong answer!")
+        timeLeft = timeLeft - 10
     }
-    // callNextQuestion()
+    callNextQuestion()
 }
 
 
@@ -76,8 +94,12 @@ opt1.addEventListener("click", checkAnswer)
 
 startButton.addEventListener("click", callNextQuestion
 );
+startButton.addEventListener("click", checkTime
+);
 function callNextQuestion() {
-
+    if (currentQuestion >= questions.length) {
+        finishGame()
+    }
 
 
 
@@ -99,4 +121,6 @@ function callNextQuestion() {
 // setInterval(function () { element.innerHTML += "Hello" }, 1000);
 function finishGame() {
     console.log("game finished");
+    formEl.style.display = "block"
+    // window.location.href = "./highscore.html"
 }

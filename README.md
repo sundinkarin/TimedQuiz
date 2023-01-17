@@ -52,8 +52,11 @@ Repository contains multiple descriptive commit messages.
 
 Repository contains a high-quality README file with description, screenshot, and link to deployed application.
 
+<img src="image timed quiz.png" height="200px" width="400px"/>
+
 ##How to Submit the Challenge
 You are required to submit BOTH of the following for review:
+
 
 The URL of the functional, deployed application.
 

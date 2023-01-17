@@ -85,3 +85,7 @@ body {
     background-color: #1bbf08;
     font-size: larger;
 }
+
+#highScoreForm {
+    display: none;
+}
