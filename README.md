@@ -58,6 +58,6 @@ Repository contains a high-quality README file with description, screenshot, and
 You are required to submit BOTH of the following for review:
 
 
-The URL of the functional, deployed application.
+The URL of the functional, deployed application. <url: https://sundinkarin.github.io/TimedQuiz/>https://sundinkarin.github.io/TimedQuiz/</url>
 
 The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
